@@ -20,7 +20,7 @@ const Button: FC<ButtonProps> = ({ className, variant, ...props }) => {
           secondary:
             "text-white bg-rose-500 shadow shadow-rose-500/30 hover:bg-rose-600 disabled:opacity-50",
           outlined:
-            "border-slate-300 hover:bg-slate-500 disabled:opacity-50 border",
+            "border-slate-300 hover:border-slate-500 disabled:opacity-50 border",
         }[variant]
       )}
     />
