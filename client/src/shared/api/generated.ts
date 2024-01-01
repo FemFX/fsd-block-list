@@ -77,20 +77,20 @@ export interface SignUpBodyDto {
 // eslint-disable-next-line
 type SecondParameter<T extends (...args: any) => any> = T extends (
   config: any,
-  args: infer P,
+  args: infer P
 ) => any
   ? P
   : never;
 
 export const appControllerGetHello = (
-  options?: SecondParameter<typeof createInstance>,
+  options?: SecondParameter<typeof createInstance>
 ) => {
   return createInstance<void>({ url: `/`, method: "GET" }, options);
 };
 
 export const authControllerSignUp = (
   signUpBodyDto: BodyType<SignUpBodyDto>,
-  options?: SecondParameter<typeof createInstance>,
+  options?: SecondParameter<typeof createInstance>
 ) => {
   return createInstance<void>(
     {
@@ -99,13 +99,13 @@ export const authControllerSignUp = (
       headers: { "Content-Type": "application/json" },
       data: signUpBodyDto,
     },
-    options,
+    options
   );
 };
 
 export const authControllerSignIn = (
   signInBodyDto: BodyType<SignInBodyDto>,
-  options?: SecondParameter<typeof createInstance>,
+  options?: SecondParameter<typeof createInstance>
 ) => {
   return createInstance<void>(
     {
@@ -114,40 +114,40 @@ export const authControllerSignIn = (
       headers: { "Content-Type": "application/json" },
       data: signInBodyDto,
     },
-    options,
+    options
   );
 };
 
 export const authControllerSignOut = (
-  options?: SecondParameter<typeof createInstance>,
+  options?: SecondParameter<typeof createInstance>
 ) => {
   return createInstance<void>(
     { url: `/auth/sign-out`, method: "POST" },
-    options,
+    options
   );
 };
 
 export const authControllerGetSessionInfo = (
-  options?: SecondParameter<typeof createInstance>,
+  options?: SecondParameter<typeof createInstance>
 ) => {
   return createInstance<GetSessionInfoDto>(
     { url: `/auth/session`, method: "GET" },
-    options,
+    options
   );
 };
 
 export const accountControllerGetAccount = (
-  options?: SecondParameter<typeof createInstance>,
+  options?: SecondParameter<typeof createInstance>
 ) => {
   return createInstance<AccountDto>(
     { url: `/account`, method: "GET" },
-    options,
+    options
   );
 };
 
 export const accountControllerPatchAccount = (
   patchAccountDto: BodyType<PatchAccountDto>,
-  options?: SecondParameter<typeof createInstance>,
+  options?: SecondParameter<typeof createInstance>
 ) => {
   return createInstance<AccountDto>(
     {
@@ -156,23 +156,23 @@ export const accountControllerPatchAccount = (
       headers: { "Content-Type": "application/json" },
       data: patchAccountDto,
     },
-    options,
+    options
   );
 };
 
 export const blockListControllerGetList = (
   params?: BlockListControllerGetListParams,
-  options?: SecondParameter<typeof createInstance>,
+  options?: SecondParameter<typeof createInstance>
 ) => {
   return createInstance<BlockListDto>(
     { url: `/block-list`, method: "GET", params },
-    options,
+    options
   );
 };
 
 export const blockListControllerAddBlockListItem = (
   addBlockItemDto: BodyType<AddBlockItemDto>,
-  options?: SecondParameter<typeof createInstance>,
+  options?: SecondParameter<typeof createInstance>
 ) => {
   return createInstance<BlockListDto>(
     {
@@ -181,17 +181,17 @@ export const blockListControllerAddBlockListItem = (
       headers: { "Content-Type": "application/json" },
       data: addBlockItemDto,
     },
-    options,
+    options
   );
 };
 
 export const blockListControllerRemoveBlockItem = (
   id: number,
-  options?: SecondParameter<typeof createInstance>,
+  options?: SecondParameter<typeof createInstance>
 ) => {
   return createInstance<BlockItemDto>(
     { url: `/block-list/item/${id}`, method: "DELETE" },
-    options,
+    options
   );
 };
 
