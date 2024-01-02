@@ -1,6 +1,6 @@
 "use client";
 
-import { useSignOut } from "@/features/model/use-sign-out";
+import { useSignOut } from "@/features/auth/model/use-sign-out";
 import Button from "@/shared/ui/button";
 
 export const SignOutButton = () => {

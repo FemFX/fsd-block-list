@@ -1,6 +1,6 @@
 "use client";
 
-import { useSignInForm } from "@/features/model/use-sign-in-form";
+import { useSignInForm } from "@/features/auth/model/use-sign-in-form";
 import { ROUTES } from "@/shared/constants/routes";
 import Button from "@/shared/ui/button";
 import TextField from "@/shared/ui/text-field";
