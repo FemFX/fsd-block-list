@@ -1,14 +1,15 @@
 "use client";
 
-import { SignOutButton } from "@/features/auth";
+import { SignOutButton, protectedPage } from "@/features/auth";
 import { authControllerGetSessionInfo } from "@/shared/api/generated";
 import { Header } from "@/shared/ui/header";
 import { useQuery } from "@tanstack/react-query";
 
-export default function Home() {
+function Home() {
   const { data } = useQuery({
     queryKey: ["session"],
     queryFn: () => authControllerGetSessionInfo(),
+    staleTime: 5 * 60 * 1000,
   });
   return (
     <main>
@@ -22,3 +23,4 @@ export default function Home() {
     </main>
   );
 }
+export default protectedPage(Home);
